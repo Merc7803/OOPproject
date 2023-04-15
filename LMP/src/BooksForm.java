@@ -97,6 +97,7 @@ public class BooksForm extends JFrame {
                 String publisher=textField_3.getText();
                 String squantity=textField_4.getText();
                 String sissued=textField_5.getText();
+
                 int quantity=Integer.parseInt(squantity);
                 int issued = Integer.parseInt(sissued);
                 int i=BookDao.save(callno, name, author, publisher, quantity, issued);
@@ -127,14 +128,20 @@ public class BooksForm extends JFrame {
                                                         .addComponent(lblCallNo)
                                                         .addComponent(lblAuthor, GroupLayout.PREFERRED_SIZE, 37, GroupLayout.PREFERRED_SIZE)
                                                         .addComponent(lblPublisher, GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE)
-                                                        .addComponent(lblQuantity, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE))
+                                                        .addComponent(lblQuantity, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(lblIssued, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE)
+                                                )
+
                                                 .addGap(47)
                                                 .addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+                                                        .addComponent(textField_5, GroupLayout.PREFERRED_SIZE, 167, GroupLayout.PREFERRED_SIZE)
                                                         .addComponent(textField_4, GroupLayout.PREFERRED_SIZE, 167, GroupLayout.PREFERRED_SIZE)
                                                         .addComponent(textField_3, GroupLayout.PREFERRED_SIZE, 167, GroupLayout.PREFERRED_SIZE)
                                                         .addComponent(textField_2, GroupLayout.PREFERRED_SIZE, 167, GroupLayout.PREFERRED_SIZE)
                                                         .addComponent(textField_1, GroupLayout.PREFERRED_SIZE, 167, GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(textField, GroupLayout.PREFERRED_SIZE, 167, GroupLayout.PREFERRED_SIZE))))
+                                                        .addComponent(textField  , GroupLayout.PREFERRED_SIZE, 167, GroupLayout.PREFERRED_SIZE)
+                                                ))
+                                )
                                 .addContainerGap(125, Short.MAX_VALUE))
                         .addGroup(Alignment.LEADING, gl_contentPane.createSequentialGroup()
                                 .addGap(161)
@@ -169,7 +176,11 @@ public class BooksForm extends JFrame {
                                 .addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
                                         .addComponent(lblQuantity)
                                         .addComponent(textField_4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                                .addGap(30)
+                                .addGap(18)
+                                .addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+                                        .addComponent(lblIssued)
+                                        .addComponent(textField_5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                                .addGap(18)
                                 .addComponent(btnAddBooks, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(ComponentPlacement.RELATED)
                                 .addComponent(btnBack)

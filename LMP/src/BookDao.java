@@ -6,7 +6,7 @@ public class BookDao {
         int status=0;
         try{
             Connection con=DB.getConnection();
-            PreparedStatement ps=con.prepareStatement("insert into books(callno,name,author,publisher,quantity, issued) values(?,?,?,?,?,?)");
+            PreparedStatement ps=con.prepareStatement("insert into books (callno, name, author, publisher, quantity, issued) values(?,?,?,?,?,?)");
             ps.setString(1,callno);
             ps.setString(2,name);
             ps.setString(3,author);
