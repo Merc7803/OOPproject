@@ -1,4 +1,4 @@
-import java.awt.BorderLayout;
+// import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -12,8 +12,8 @@ import java.awt.Font;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.LayoutStyle.ComponentPlacement;
-import java.sql.*;
+// import javax.swing.LayoutStyle.ComponentPlacement;
+// import java.sql.*;
 public class AdminSuccess extends JFrame {
     static AdminSuccess frame;
     private JPanel contentPane;
