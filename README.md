@@ -15,4 +15,12 @@ Nhóm 8:
 
 Hướng dẫn chạy code:
 
-B1: Cài IDE Intelij https://www.jetbrains.com/idea/download/#section=windows 
+B1: clone code từ git
+
+         git clone https://github.com/qkhanh711/OOPproject.git
+
+
+
+B2: Cài IDE Intelij https://www.jetbrains.com/idea/download/#section=windows 
+
+B3: 
