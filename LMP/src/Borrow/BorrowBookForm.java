@@ -1,4 +1,4 @@
-package Issued;// import java.awt.BorderLayout;
+package Borrow;
 
 import Admin.LibrarianSuccess;
 
@@ -12,8 +12,8 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
-public class IssueBookForm extends JFrame {
-    static IssueBookForm frame;
+public class BorrowBookForm extends JFrame {
+    static BorrowBookForm frame;
     private JPanel contentPane;
     private JTextField textField_1;
     private JTextField textField_2;
@@ -27,7 +27,7 @@ public class IssueBookForm extends JFrame {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    frame = new IssueBookForm();
+                    frame = new BorrowBookForm();
                     frame.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -39,7 +39,7 @@ public class IssueBookForm extends JFrame {
     /**
      * Create the frame.
      */
-    public IssueBookForm() {
+    public BorrowBookForm() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 438, 414);
         contentPane = new JPanel();
@@ -79,20 +79,20 @@ public class IssueBookForm extends JFrame {
                 String studentname=textField_3.getText();
                 String studentcontact=textField_4.getText();
 
-                if(IssueBookDao.checkBook(bookcallno)){
+                if(BorrowBookDao.checkBook(bookcallno)){
 
-                    int i=IssueBookDao.save(bookcallno, studentid, studentname, studentcontact);
+                    int i=BorrowBookDao.save(bookcallno, studentid, studentname, studentcontact);
                     if(i>0){
-                        JOptionPane.showMessageDialog(IssueBookForm.this,"Book issued successfully!");
+                        JOptionPane.showMessageDialog(BorrowBookForm.this,"Book issued successfully!");
                         LibrarianSuccess.main(new String[]{});
                         frame.dispose();
 
                     }else{
-                        JOptionPane.showMessageDialog(IssueBookForm.this,"Sorry, unable to issue!");
+                        JOptionPane.showMessageDialog(BorrowBookForm.this,"Sorry, unable to issue!");
                     }//end of save if-else
 
                 }else{
-                    JOptionPane.showMessageDialog(IssueBookForm.this,"Sorry, Callno doesn't exist!");
+                    JOptionPane.showMessageDialog(BorrowBookForm.this,"Sorry, Callno doesn't exist!");
                 }//end of checkbook if-else
 
             }

@@ -1,4 +1,4 @@
-package Issued;
+package Borrow;
 
 import Database.DB;
 
@@ -15,7 +15,7 @@ import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JTable;
 
-public class ViewIssuedBooks extends JFrame {
+public class ViewBorrowBooks extends JFrame {
 
     private JPanel contentPane;
     private JTable table;
@@ -24,7 +24,7 @@ public class ViewIssuedBooks extends JFrame {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    ViewIssuedBooks frame = new ViewIssuedBooks();
+                    ViewBorrowBooks frame = new ViewBorrowBooks();
                     frame.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -36,7 +36,7 @@ public class ViewIssuedBooks extends JFrame {
     /**
      * Create the frame.
      */
-    public ViewIssuedBooks() {
+    public ViewBorrowBooks() {
         setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         setBounds(100, 100, 450, 300);
         contentPane = new JPanel();

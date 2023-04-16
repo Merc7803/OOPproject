@@ -3,8 +3,8 @@ package Admin;
 import Books.BooksForm;
 import Books.ReturnBook;
 import Books.ViewBooks;
-import Issued.IssueBookForm;
-import Issued.ViewIssuedBooks;
+import Borrow.BorrowBookForm;
+import Borrow.ViewBorrowBooks;
 
 import java.awt.*;
 import java.awt.EventQueue;
@@ -66,19 +66,19 @@ public class LibrarianSuccess extends JFrame {
         });
         btnViewBooks.setFont(new Font("Tahoma", Font.PLAIN, 13));
 
-        JButton btnIssueBook = new JButton("Issue Book");
+        JButton btnIssueBook = new JButton("Borrow Book");
         btnIssueBook.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                IssueBookForm.main(new String[]{});
+                BorrowBookForm.main(new String[]{});
                 frame.dispose();
             }
         });
         btnIssueBook.setFont(new Font("Tahoma", Font.PLAIN, 13));
 
-        JButton btnViewIssuedBooks = new JButton("View Issued Books");
+        JButton btnViewIssuedBooks = new JButton("View Borrow Books");
         btnViewIssuedBooks.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                ViewIssuedBooks.main(new String[]{});
+                ViewBorrowBooks.main(new String[]{});
             }
         });
         btnViewIssuedBooks.setFont(new Font("Tahoma", Font.PLAIN, 13));

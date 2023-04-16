@@ -1,9 +1,9 @@
-package Issued;
+package Borrow;
 
 import Database.DB;
 
 import java.sql.*;
-public class IssueBookDao {
+public class BorrowBookDao {
 
     public static boolean checkBook(String bookcallno){
         boolean status=false;
