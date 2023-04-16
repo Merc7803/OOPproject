@@ -1,19 +1,18 @@
-// import java.awt.BorderLayout;
-import java.awt.EventQueue;
+package Admin;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
-import javax.swing.JLabel;
-import java.awt.Color;
-import java.awt.Font;
-import javax.swing.JButton;
+import Librarian.DeleteLibrarian;
+import Librarian.LibrarianForm;
+import Librarian.ViewLibrarian;
+
+import java.awt.*;
+import java.awt.EventQueue;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-// import javax.swing.LayoutStyle.ComponentPlacement;
-// import java.sql.*;
+
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+import javax.swing.GroupLayout.Alignment;
+
 public class AdminSuccess extends JFrame {
     static AdminSuccess frame;
     private JPanel contentPane;

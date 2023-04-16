@@ -1,5 +1,6 @@
 create database library_managerment;
 use library_managerment;
+drop database library_managerment;
 -- phpMyAdmin SQL Dump
 -- version 3.4.5
 -- http://www.phpmyadmin.net
@@ -47,9 +48,9 @@ CREATE TABLE IF NOT EXISTS `librarian` (
 --
 
 INSERT INTO `librarian` (`id`, `name`, `password`, `email`, `address`, `city`, `contact`) VALUES
-(1, 'Prabhakar', 'ppp', 'prabhakar@gmail.com', 'javatpoint', 'noida', '9998328238'),
-(4, 'sumedh', 'sumesh', 'sumesh@gmail.com', 'Kuch Bhi', 'noida', '93823932823'),
-(6, 'abhi', 'abhi', 'abhi@gmail.com', 'javatpoint', 'noida', '92393282323');
+(1, 'khanh', 'nguyen', 'quockhanh@gmail.com', 'Ha Dong', 'Ha Noi', '0396115978'),
+(2, 'ha', 'nguyen', 'Nguyenha@gmail.com', 'Ha Dong', 'Ha Noi', '0365135581'),
+(3, 'hai', 'tram', 'tranhai@gmail.com', 'Ha Dong', 'Ha Noi', '0000000');
 
 CREATE TABLE IF NOT EXISTS `issuebooks` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -66,9 +67,9 @@ CREATE TABLE IF NOT EXISTS `issuebooks` (
 --
 
 INSERT INTO `issuebooks` (`id`, `bookcallno`, `studentid`, `studentname`, `studentcontact`, `issueddate`) VALUES
-(4, 'A@4', 23, 'kk', '932992932', '2016-07-19 18:43:16'),
-(6, 'A@4', 335, 'Sumedh', '95676565756', '2016-07-19 18:44:34'),
-(7, 'A@4', 87, 'abhishek', '9329882382', '2016-07-19 18:46:12');
+(1, 'A@1', 23, 'abc', '932992932', '2016-07-19 18:43:16'),
+(2, 'A@1', 335, 'def', '95676565756', '2016-07-19 18:44:34'),
+(3, 'A@1', 87, 'ghi', '9329882382', '2016-07-19 18:46:12');
 
 CREATE TABLE IF NOT EXISTS `books` (
   `id` int(10) NOT NULL AUTO_INCREMENT,

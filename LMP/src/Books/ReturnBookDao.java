@@ -1,3 +1,7 @@
+package Books;
+
+import Database.DB;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -6,7 +10,7 @@ public class ReturnBookDao {
     public static int delete(String bookcallno,int studentid){
         int status=0;
         try{
-            Connection con=DB.getConnection();
+            Connection con= DB.getConnection();
 
             status=updatebook(bookcallno);//updating quantity and issue
 
@@ -25,7 +29,7 @@ public class ReturnBookDao {
         int status=0;
         int quantity=0,issued=0;
         try{
-            Connection con=DB.getConnection();
+            Connection con= DB.getConnection();
 
             PreparedStatement ps=con.prepareStatement("select quantity,issued from books where callno=?");
             ps.setString(1,bookcallno);

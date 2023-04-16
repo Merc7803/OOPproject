@@ -1,3 +1,7 @@
+package Librarian;
+
+import Database.DB;
+
 import java.sql.*;
 public class LibrarianDao {
 
@@ -5,7 +9,7 @@ public class LibrarianDao {
     public static int save(String name,String password,String email,String address,String city,String contact){
         int status=0;
         try{
-            Connection con=DB.getConnection();
+            Connection con= DB.getConnection();
             PreparedStatement ps=con.prepareStatement("insert into librarian(name,password,email,address,city,contact) values(?,?,?,?,?,?)");
             ps.setString(1,name);
             ps.setString(2,password);
@@ -21,7 +25,7 @@ public class LibrarianDao {
     public static int delete(int id){
         int status=0;
         try{
-            Connection con=DB.getConnection();
+            Connection con= DB.getConnection();
             PreparedStatement ps=con.prepareStatement("delete from librarian where id=?");
             ps.setInt(1,id);
             status=ps.executeUpdate();
@@ -33,7 +37,7 @@ public class LibrarianDao {
     public static boolean validate(String name,String password){
         boolean status=false;
         try{
-            Connection con=DB.getConnection();
+            Connection con= DB.getConnection();
             PreparedStatement ps=con.prepareStatement("select * from librarian where name=? and password=?");
             ps.setString(1,name);
             ps.setString(2,password);

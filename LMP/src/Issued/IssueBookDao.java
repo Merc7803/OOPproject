@@ -1,10 +1,14 @@
+package Issued;
+
+import Database.DB;
+
 import java.sql.*;
 public class IssueBookDao {
 
     public static boolean checkBook(String bookcallno){
         boolean status=false;
         try{
-            Connection con=DB.getConnection();
+            Connection con= DB.getConnection();
             PreparedStatement ps=con.prepareStatement("select * from books where callno=?");
             ps.setString(1,bookcallno);
             ResultSet rs=ps.executeQuery();
@@ -17,7 +21,7 @@ public class IssueBookDao {
     public static int save(String bookcallno,int studentid,String studentname,String studentcontact){
         int status=0;
         try{
-            Connection con=DB.getConnection();
+            Connection con= DB.getConnection();
 
             status=updatebook(bookcallno);//updating quantity and issue
 
@@ -38,7 +42,7 @@ public class IssueBookDao {
         int status=0;
         int quantity=0,issued=0;
         try{
-            Connection con=DB.getConnection();
+            Connection con= DB.getConnection();
 
             PreparedStatement ps=con.prepareStatement("select quantity,issued from books where callno=?");
             ps.setString(1,bookcallno);

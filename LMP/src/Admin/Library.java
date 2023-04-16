@@ -1,18 +1,14 @@
-// import java.awt.BorderLayout;
-import java.awt.EventQueue;
+package Admin;// import java.awt.BorderLayout;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
-import javax.swing.JLabel;
-import java.awt.Color;
-import java.awt.Font;
-import javax.swing.JButton;
-import javax.swing.LayoutStyle.ComponentPlacement;
+import java.awt.*;
+import java.awt.EventQueue;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.LayoutStyle.ComponentPlacement;
 
 public class Library extends JFrame {
     static Library frame;

@@ -1,3 +1,7 @@
+package Issued;
+
+import Database.DB;
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.sql.Connection;
@@ -11,7 +15,7 @@ import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JTable;
 
-public class ViewLibrarian extends JFrame {
+public class ViewIssuedBooks extends JFrame {
 
     private JPanel contentPane;
     private JTable table;
@@ -20,7 +24,7 @@ public class ViewLibrarian extends JFrame {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    ViewLibrarian frame = new ViewLibrarian();
+                    ViewIssuedBooks frame = new ViewIssuedBooks();
                     frame.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -32,18 +36,19 @@ public class ViewLibrarian extends JFrame {
     /**
      * Create the frame.
      */
-    public ViewLibrarian() {
+    public ViewIssuedBooks() {
         setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         setBounds(100, 100, 450, 300);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         contentPane.setLayout(new BorderLayout(0, 0));
         setContentPane(contentPane);
+
         String data[][]=null;
         String column[]=null;
         try{
-            Connection con=DB.getConnection();
-            PreparedStatement ps=con.prepareStatement("select * from librarian",ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_UPDATABLE);
+            Connection con= DB.getConnection();
+            PreparedStatement ps=con.prepareStatement("select * from issuebooks",ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_UPDATABLE);
             ResultSet rs=ps.executeQuery();
 
             ResultSetMetaData rsmd=rs.getMetaData();

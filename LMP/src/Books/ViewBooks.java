@@ -1,15 +1,15 @@
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
+package Books;
+
+import Database.DB;
+
+import java.awt.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JTable;
 
 public class ViewBooks extends JFrame {
 
@@ -43,7 +43,7 @@ public class ViewBooks extends JFrame {
         String data[][]=null;
         String column[]=null;
         try{
-            Connection con=DB.getConnection();
+            Connection con= DB.getConnection();
             PreparedStatement ps=con.prepareStatement("select * from books",ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_UPDATABLE);
             ResultSet rs=ps.executeQuery();
 

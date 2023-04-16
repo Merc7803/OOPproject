@@ -1,18 +1,15 @@
-// import java.awt.BorderLayout;
-import java.awt.EventQueue;
+package Librarian;// import java.awt.BorderLayout;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JTextField;
-import javax.swing.JButton;
-import java.awt.Font;
+import Admin.AdminSuccess;
+
+import java.awt.*;
+import java.awt.EventQueue;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+import javax.swing.GroupLayout.Alignment;
 
 public class DeleteLibrarian extends JFrame {
     static DeleteLibrarian frame;
@@ -58,7 +55,7 @@ public class DeleteLibrarian extends JFrame {
                     JOptionPane.showMessageDialog(DeleteLibrarian.this,"Id can't be blank");
                 }else{
                     int id=Integer.parseInt(sid);
-                    int i=LibrarianDao.delete(id);
+                    int i= LibrarianDao.delete(id);
                     if(i>0){
                         JOptionPane.showMessageDialog(DeleteLibrarian.this,"Record deleted successfully!");
                     }else{
