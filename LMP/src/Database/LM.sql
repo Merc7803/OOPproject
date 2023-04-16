@@ -1,20 +1,9 @@
 create database library_managerment;
 use library_managerment;
 drop database library_managerment;
--- phpMyAdmin SQL Dump
--- version 3.4.5
--- http://www.phpmyadmin.net
---
--- Host: localhost
--- Generation Time: Jul 19, 2016 at 07:40 PM
--- Server version: 5.5.16
--- PHP Version: 5.4.0beta2-dev
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
-
-
-
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;

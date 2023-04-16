@@ -30,10 +30,21 @@ sau khi clone có folder:
 
 ## How to Run
 
-**Step 1:** Cài IDE Intelij tại link
+**Bước 1:** Cài IDE Intelij tại link
 
          https://www.jetbrains.com/idea/download/#section=windows 
 
-**Step 2:** Đăng ký tài khoản jetbrain để sử dụng IDE, sau khi mở Intelij chọn Open -> LMP -> OK kết quả như hình dưới
+**Bước 2:** Đăng ký tài khoản jetbrain để sử dụng IDE, sau khi mở Intelij chọn Open -> LMP -> OK kết quả như hình dưới:
 
-![step1](Images/OpenProject.png)
+![step2](Images/OpenProject.png)
+
+**Bước 3** Chọn File -> Project Structure -> Modules -> Deoendencies -> + -> JARs or Directories... -> tìm đường dẫn LibraryJPT.jar + mysql-connector
+
+![step3](Images/JAR.png)
+
+**Bước 5:** Chạy file Main: Giao diện ra nhưu hình dưới, chọn Admin Login để tạo tài khoản Libararian -> nhập tài khoản vật khẩu là:
+
+        phenikaa
+        k15cntt
+
+![step5](Images/run.png)
