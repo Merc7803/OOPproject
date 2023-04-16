@@ -55,7 +55,7 @@ sau khi clone có folder:
 
 ![step4](Images/password.png)
 
-**Bước 5:** Chạy file Main: Giao diện ra nhưu hình dưới, chọn Admin Login để tạo tài khoản Libararian -> nhập tài khoản vật khẩu là:
+**Bước 5:** Chạy file Main: Giao diện ra như hình dưới, chọn Admin Login để tạo tài khoản Libararian -> nhập tài khoản vật khẩu là:
 
         phenikaa
         k15cntt
