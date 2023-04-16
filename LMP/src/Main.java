@@ -1,5 +1,8 @@
+import Admin.Library;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        Library frame = new Library();
+        frame.setVisible(true);
     }
 }
