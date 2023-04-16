@@ -19,6 +19,14 @@ B1: clone code từ git
 
          git clone https://github.com/qkhanh711/OOPproject.git
 
+sau khi clone có folder:
+
+        OOPproject/
+            LMP/
+                idea/
+                out/
+                src/
+            LibraryJTP/
 
 
 B2: Cài IDE Intelij https://www.jetbrains.com/idea/download/#section=windows 
