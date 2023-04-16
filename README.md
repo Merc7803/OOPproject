@@ -30,12 +30,10 @@ sau khi clone có folder:
 
 ## How to Run
 
-B1: Cài IDE Intelij tại link
+**Step 1:**Cài IDE Intelij tại link
 
          https://www.jetbrains.com/idea/download/#section=windows 
 
-B3: Đăng ký tài khoản jetbrain để sử dụng IDE, sau khi mở Intelij chọn Open -> LMP -> OK kết quả như hình dưới
-
-**Step 1:**
+**Step 2:**Đăng ký tài khoản jetbrain để sử dụng IDE, sau khi mở Intelij chọn Open -> LMP -> OK kết quả như hình dưới
 
 ![step1](Images/OpenProject.png)
