@@ -1,10 +1,5 @@
 # 📚 OOP project -Java
 
-
-<a href="[https://github.com/harismuneer](https://github.com/qkhanh711/OOPproject)"><img alt="views" title="Github views" src="https://komarev.com/ghpvc/?username=harismuneer&style=flat-square" width="125"/></a>
-
-
-
 Source Code Bài tâp lớn OOP về quản lí thư viện trường đại học Phenikaa
 
 Sử dụng: 
