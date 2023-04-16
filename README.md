@@ -42,6 +42,19 @@ sau khi clone có folder:
 
 ![step3](Images/JAR.png)
 
+**Bước 4** Vào package Database 
+
+    Mở mysql trên máy, chạy từng dòng trong LM.sql (trừ dòng drop database ...) để:
+        - tạo database
+        - tạo bảng
+        - thêm nội dung vào trong bảng 
+
+![step4](Images/mysql.png)
+
+    Chọn DB đổi mật khẩu mysql (phần bôi đen)
+
+![step4](Images/password.png)
+
 **Bước 5:** Chạy file Main: Giao diện ra nhưu hình dưới, chọn Admin Login để tạo tài khoản Libararian -> nhập tài khoản vật khẩu là:
 
         phenikaa
