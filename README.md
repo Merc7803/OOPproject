@@ -15,7 +15,7 @@ Nhóm 8:
 
 Hướng dẫn chạy code:
 
-B1: clone code từ git
+Clone code từ git
 
          git clone https://github.com/qkhanh711/OOPproject.git
 
@@ -28,7 +28,14 @@ sau khi clone có folder:
                 src/
             LibraryJTP/
 
+## How to Run
 
-B2: Cài IDE Intelij https://www.jetbrains.com/idea/download/#section=windows 
+B1: Cài IDE Intelij tại link
 
-B3: 
+         https://www.jetbrains.com/idea/download/#section=windows 
+
+B3: Đăng ký tài khoản jetbrain để sử dụng IDE, sau khi mở Intelij chọn Open -> LMP -> OK kết quả như hình dưới
+
+**Step 1:**
+
+![step1](Images/OpenProject.png)
