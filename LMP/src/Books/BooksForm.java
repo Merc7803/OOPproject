@@ -1,4 +1,5 @@
 package Books;// import java.awt.BorderLayout;
+import Admin.AdminSuccess;
 import Admin.LibrarianSuccess;
 
 import java.awt.*;
@@ -107,6 +108,13 @@ public class BooksForm extends JFrame {
         });
 
         JButton btnBack = new JButton("Back");
+
+        btnBack.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                AdminSuccess.main(new String[]{});
+                frame.dispose();
+            }
+        });
         GroupLayout gl_contentPane = new GroupLayout(contentPane);
         gl_contentPane.setHorizontalGroup(
                 gl_contentPane.createParallelGroup(Alignment.TRAILING)

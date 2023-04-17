@@ -57,6 +57,7 @@ public class Library extends JFrame {
         btnLibrarianLogin.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
                 LibrarianLogin.main(new String[]{});
+                frame.dispose();
             }
         });
         btnLibrarianLogin.setFont(new Font("Tahoma", Font.PLAIN, 15));
