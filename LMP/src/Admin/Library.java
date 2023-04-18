@@ -1,4 +1,4 @@
-package Admin;// import java.awt.BorderLayout;
+package Admin;
 
 import java.awt.*;
 import java.awt.EventQueue;
