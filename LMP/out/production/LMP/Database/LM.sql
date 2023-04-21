@@ -1,6 +1,6 @@
 create database library_managerment;
 use library_managerment;
-drop database library_managerment;
+-- drop database library_managerment;
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -21,64 +21,64 @@ SET time_zone = "+00:00";
 -- Table structure for table `librarian`
 --
 
-CREATE TABLE IF NOT EXISTS `librarian` (
-  `id` int(5) NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) NOT NULL,
-  `password` varchar(100) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `address` varchar(200) NOT NULL,
-  `city` varchar(100) NOT NULL,
-  `contact` varchar(20) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+create table if not exists `librarian` (
+  `id` int(5) not null auto_increment,
+  `name` varchar(100) not null,
+  `password` varchar(100) not null,
+  `email` varchar(100) not null,
+  `address` varchar(200) not null,
+  `city` varchar(100) not null,
+  `contact` varchar(20) not null,
+  primary key (`id`)
+) engine=InnoDB  default charset=latin1 auto_increment=7 ;
 
 --
 -- Dumping data for table `librarian`
 --
 
-INSERT INTO `librarian` (`id`, `name`, `password`, `email`, `address`, `city`, `contact`) VALUES
+insert into `librarian` (`id`, `name`, `password`, `email`, `address`, `city`, `contact`) values
 (1, 'khanh', 'nguyen', 'quockhanh@gmail.com', 'Ha Dong', 'Ha Noi', '0396115978'),
 (2, 'ha', 'nguyen', 'Nguyenha@gmail.com', 'Ha Dong', 'Ha Noi', '0365135581'),
 (3, 'hai', 'tram', 'tranhai@gmail.com', 'Ha Dong', 'Ha Noi', '0000000');
 
-CREATE TABLE IF NOT EXISTS `issuebooks` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `bookcallno` varchar(50) NOT NULL,
-  `studentid` int(11) NOT NULL,
-  `studentname` varchar(50) NOT NULL,
-  `studentcontact` varchar(20) NOT NULL,
-  `issueddate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+create table if not exists `issuebooks` (
+  `id` int(11) not null auto_increment,
+  `bookcallno` varchar(50) not null,
+  `studentid` int(11) not null,
+  `studentname` varchar(50) not null,
+  `studentcontact` varchar(20) not null,
+  `issueddate` timestamp not null default current_timestamp on update current_timestamp,
+  primary key (`id`)
+) engine=InnoDB  default charset=latin1 auto_increment=8 ;
 
 --
 -- Dumping data for table `issuebooks`
 --
 
-INSERT INTO `issuebooks` (`id`, `bookcallno`, `studentid`, `studentname`, `studentcontact`, `issueddate`) VALUES
+insert into `issuebooks` (`id`, `bookcallno`, `studentid`, `studentname`, `studentcontact`, `issueddate`) values
 (1, 'A@1', 23, 'abc', '932992932', '2016-07-19 18:43:16'),
 (2, 'A@1', 335, 'def', '95676565756', '2016-07-19 18:44:34'),
 (3, 'A@1', 87, 'ghi', '9329882382', '2016-07-19 18:46:12');
 
-CREATE TABLE IF NOT EXISTS `books` (
-  `id` int(10) NOT NULL AUTO_INCREMENT,
-  `callno` varchar(100) NOT NULL,
-  `name` varchar(100) NOT NULL,
-  `author` varchar(100) NOT NULL,
-  `publisher` varchar(100) NOT NULL,
-  `quantity` int(10) NOT NULL,
-  `issued` int(10) NOT NULL,
-  `added_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `callno` (`callno`),
-  UNIQUE KEY `callno_2` (`callno`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+create table if not exists `books` (
+  `id` int(10) not null auto_increment,
+  `callno` varchar(100) not null,
+  `name` varchar(100) not null,
+  `author` varchar(100) not null,
+  `publisher` varchar(100) not null,
+  `quantity` int(10) not null,
+  `issued` int(10) not null,
+  `added_date` timestamp not null default current_timestamp on update current_timestamp,
+  primary key (`id`),
+  unique key `callno` (`callno`),
+  unique key `callno_2` (`callno`)
+) engine=InnoDB  default charset=latin1 auto_increment=4 ;
 
 --
 -- Dumping data for table `books`
 --
 
-INSERT INTO `books` (`id`, `callno`, `name`, `author`, `publisher`, `quantity`, `issued`, `added_date`) VALUES
+insert into `books` (`id`, `callno`, `name`, `author`, `publisher`, `quantity`, `issued`, `added_date`) values
 (1, 'A@4', 'C In Depth', 'Shrivastav', 'BPB', 2, 2, '2016-07-19 19:37:56'),
 (2, 'B@1', 'DBMS', 'Korth', 'Pearson', 3, 0, '2016-07-18 18:39:52'),
 (3, 'G@12', 'Let''s see', 'Yashwant Kanetkar', 'BPB', 10, 0, '2016-07-18 23:02:14');
