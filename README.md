@@ -9,9 +9,9 @@ Source Code Bài tâp lớn OOP về quản lí thư viện trường đại h�
 
 ## Nhóm 8: 
 
-         | Nguyễn Quốc Khánh| Nguyễn Thị Hà | Trần Long Hải|
-         |     21011495     |   21010988    |   21010586   |  
-         |     K15-KHMT     |  K15-CNTT-VJ1 |   K15-CNTT1  |
+                             | Nguyễn Quốc Khánh| Nguyễn Thị Hà | Trần Long Hải|
+                             |     21011495     |   21010988    |   21010586   |  
+                             |     K15-KHMT     |  K15-CNTT-VJ1 |   K15-CNTT1  |
 
 ## Hướng dẫn chạy code:
 
