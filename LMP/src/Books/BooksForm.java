@@ -111,7 +111,7 @@ public class BooksForm extends JFrame {
 
         btnBack.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                AdminSuccess.main(new String[]{});
+                LibrarianSuccess.main(new String[]{});
                 frame.dispose();
             }
         });
