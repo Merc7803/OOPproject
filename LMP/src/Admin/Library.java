@@ -2,8 +2,7 @@ package Admin;
 
 import java.awt.*;
 import java.awt.EventQueue;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -12,20 +11,17 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 
 public class Library extends JFrame {
     static Library frame;
-    private JPanel contentPane;
 
     /**
      * Launch the application.
      */
     public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    frame= new Library();
-                    frame.setVisible(true);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+        EventQueue.invokeLater(() -> {
+            try {
+                frame= new Library();
+                frame.setVisible(true);
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         });
     }
@@ -36,7 +32,7 @@ public class Library extends JFrame {
     public Library() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 450, 300);
-        contentPane = new JPanel();
+        JPanel contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
 
@@ -45,20 +41,16 @@ public class Library extends JFrame {
         lblLibraryManagement.setForeground(Color.GRAY);
 
         JButton btnAdminLogin = new JButton("Admin Login");
-        btnAdminLogin.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                AdminLogin.main(new String[]{});
-                frame.dispose();
-            }
+        btnAdminLogin.addActionListener(e -> {
+            AdminLogin.main(new String[]{});
+            frame.dispose();
         });
         btnAdminLogin.setFont(new Font("Tahoma", Font.PLAIN, 15));
 
         JButton btnLibrarianLogin = new JButton("Librarian Login");
-        btnLibrarianLogin.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent arg0) {
-                LibrarianLogin.main(new String[]{});
-                frame.dispose();
-            }
+        btnLibrarianLogin.addActionListener(arg0 -> {
+            LibrarianLogin.main(new String[]{});
+            frame.dispose();
         });
         btnLibrarianLogin.setFont(new Font("Tahoma", Font.PLAIN, 15));
         GroupLayout gl_contentPane = new GroupLayout(contentPane);

@@ -1,11 +1,9 @@
 package Books;
-import Admin.AdminSuccess;
+//import Admin.AdminSuccess;
 import Admin.LibrarianSuccess;
 
 import java.awt.*;
 import java.awt.EventQueue;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -14,27 +12,23 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 
 public class BooksForm extends JFrame {
     static BooksForm frame;
-    private JPanel contentPane;
-    private JTextField textField;
-    private JTextField textField_1;
-    private JTextField textField_2;
-    private JTextField textField_3;
-    private JTextField textField_4;
-
-    private JTextField textField_5;
+    private final JTextField textField;
+    private final JTextField textField_1;
+    private final JTextField textField_2;
+    private final JTextField textField_3;
+    private final JTextField textField_4;
+    private final JTextField textField_5;
 
     /**
      * Launch the application.
      */
     public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    frame = new BooksForm();
-                    frame.setVisible(true);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+        EventQueue.invokeLater(() -> {
+            try {
+                frame = new BooksForm();
+                frame.setVisible(true);
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         });
     }
@@ -45,7 +39,7 @@ public class BooksForm extends JFrame {
     public BooksForm() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 450, 404);
-        contentPane = new JPanel();
+        JPanel contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
 
@@ -84,36 +78,32 @@ public class BooksForm extends JFrame {
         textField_5.setColumns(10);
 
         JButton btnAddBooks = new JButton("Add Books");
-        btnAddBooks.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                String callno=textField.getText();
-                String name=textField_1.getText();
-                String author=textField_2.getText();
-                String publisher=textField_3.getText();
-                String squantity=textField_4.getText();
-                String sissued=textField_5.getText();
+        btnAddBooks.addActionListener(e -> {
+            String callno=textField.getText();
+            String name=textField_1.getText();
+            String author=textField_2.getText();
+            String publisher=textField_3.getText();
+            String squantity=textField_4.getText();
+            String sissued=textField_5.getText();
 
-                int quantity=Integer.parseInt(squantity);
-                int issued = Integer.parseInt(sissued);
-                int i=BookDao.save(callno, name, author, publisher, quantity, issued);
-                if(i>0){
-                    JOptionPane.showMessageDialog(BooksForm.this,"Books added successfully!");
-                    LibrarianSuccess.main(new String[]{});
-                    frame.dispose();
+            int quantity=Integer.parseInt(squantity);
+            int issued = Integer.parseInt(sissued);
+            int i=BookDao.save(callno, name, author, publisher, quantity, issued);
+            if(i>0){
+                JOptionPane.showMessageDialog(BooksForm.this,"Books added successfully!");
+                LibrarianSuccess.main(new String[]{});
+                frame.dispose();
 
-                }else{
-                    JOptionPane.showMessageDialog(BooksForm.this,"Sorry, unable to save!");
-                }
+            }else{
+                JOptionPane.showMessageDialog(BooksForm.this,"Sorry, unable to save!");
             }
         });
 
         JButton btnBack = new JButton("Back");
 
-        btnBack.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                LibrarianSuccess.main(new String[]{});
-                frame.dispose();
-            }
+        btnBack.addActionListener(e -> {
+            LibrarianSuccess.main(new String[]{});
+            frame.dispose();
         });
         GroupLayout gl_contentPane = new GroupLayout(contentPane);
         gl_contentPane.setHorizontalGroup(

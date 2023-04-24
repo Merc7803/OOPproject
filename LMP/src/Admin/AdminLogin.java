@@ -21,22 +21,23 @@ import java.awt.event.ActionEvent;
 
 public class AdminLogin extends JFrame {
     static AdminLogin frame;
-    private JPanel contentPane;
-    private JTextField textField;
-    private JPasswordField passwordField;
+    private final JTextField textField;
+    private final JPasswordField passwordField;
 
     /**
      * Launch the application.
      */
     public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    frame = new AdminLogin();
-                    frame.setVisible(true);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+//        EventQueue.invokeLater(new Runnable() {
+//        Đoạn mã đầu tiên sử dụng cú pháp của anonymous inner class để tạo một đối tượng mới từ interface Runnable. Trong đó, phương thức run() được triển khai và được gọi khi đối tượng được tạo ra.
+//        Còn đoạn mã thứ hai sử dụng lambda expression để tạo một đối tượng mới từ interface Runnable. Điểm khác biệt là thay vì triển khai phương thức run() trong anonymous inner class, chúng ta triển khai phương thức run() trực tiếp bên trong lambda expression.
+//        Cả hai cách đều tạo ra đối tượng Runnable để truyền vào phương thức invokeLater() của lớp EventQueue. Tuy nhiên, sử dụng lambda expression giúp mã nguồn trở nên ngắn gọn hơn và dễ đọc hơn
+        EventQueue.invokeLater(() -> {
+            try {
+                frame = new AdminLogin();
+                frame.setVisible(true);
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         });
     }
@@ -47,7 +48,7 @@ public class AdminLogin extends JFrame {
     public AdminLogin() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 450, 300);
-        contentPane = new JPanel();
+        JPanel contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
 
@@ -80,6 +81,12 @@ public class AdminLogin extends JFrame {
 
         passwordField = new JPasswordField();
         GroupLayout gl_contentPane = new GroupLayout(contentPane);
+        JButton btnBack = new JButton("Back");
+
+        btnBack.addActionListener(e -> {
+            Library.main(new String[]{});
+            frame.dispose();
+        });
         gl_contentPane.setHorizontalGroup(
                 gl_contentPane.createParallelGroup(Alignment.TRAILING)
                         .addGroup(gl_contentPane.createSequentialGroup()
@@ -101,6 +108,10 @@ public class AdminLogin extends JFrame {
                                 .addContainerGap(187, Short.MAX_VALUE)
                                 .addComponent(btnLogin, GroupLayout.PREFERRED_SIZE, 86, GroupLayout.PREFERRED_SIZE)
                                 .addGap(151))
+                        .addGroup(gl_contentPane.createSequentialGroup()
+                                .addContainerGap(359, Short.MAX_VALUE)
+                                .addComponent(btnBack)
+                                .addContainerGap())
         );
         gl_contentPane.setVerticalGroup(
                 gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -116,6 +127,7 @@ public class AdminLogin extends JFrame {
                                         .addComponent(passwordField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                                 .addGap(18)
                                 .addComponent(btnLogin, GroupLayout.PREFERRED_SIZE, 37, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnBack)
                                 .addContainerGap(80, Short.MAX_VALUE))
         );
         contentPane.setLayout(gl_contentPane);

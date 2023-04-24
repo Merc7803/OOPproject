@@ -6,8 +6,8 @@ import Librarian.ViewLibrarian;
 
 import java.awt.*;
 import java.awt.EventQueue;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+//import java.awt.event.ActionListener;
+//import java.awt.event.ActionEvent;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -15,20 +15,17 @@ import javax.swing.GroupLayout.Alignment;
 
 public class AdminSuccess extends JFrame {
     static AdminSuccess frame;
-    private JPanel contentPane;
 
     /**
      * Launch the application.
      */
     public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    frame = new AdminSuccess();
-                    frame.setVisible(true);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+        EventQueue.invokeLater(() -> {
+            try {
+                frame = new AdminSuccess();
+                frame.setVisible(true);
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         });
     }
@@ -39,7 +36,7 @@ public class AdminSuccess extends JFrame {
     public AdminSuccess() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 450, 371);
-        contentPane = new JPanel();
+        JPanel contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
 
@@ -49,36 +46,26 @@ public class AdminSuccess extends JFrame {
 
         JButton btnNewButton = new JButton("Add Librarian");
         btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        btnNewButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                LibrarianForm.main(new String[]{});
-                frame.dispose();
-            }
+        btnNewButton.addActionListener(e -> {
+            LibrarianForm.main(new String[]{});
+            frame.dispose();
         });
 
         JButton btnViewLibrarian = new JButton("View Librarian");
-        btnViewLibrarian.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent arg0) {
-                ViewLibrarian.main(new String[]{});
-            }
-        });
+        btnViewLibrarian.addActionListener(arg0 -> ViewLibrarian.main(new String[]{}));
         btnViewLibrarian.setFont(new Font("Tahoma", Font.PLAIN, 15));
 
         JButton btnDeleteLibrarian = new JButton("Delete Librarian");
-        btnDeleteLibrarian.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                DeleteLibrarian.main(new String[]{});
-                frame.dispose();
-            }
+        btnDeleteLibrarian.addActionListener(e -> {
+            DeleteLibrarian.main(new String[]{});
+            frame.dispose();
         });
         btnDeleteLibrarian.setFont(new Font("Tahoma", Font.PLAIN, 15));
 
         JButton btnLogout = new JButton("Logout");
-        btnLogout.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent arg0) {
-                Library.main(new String[]{});
-                frame.dispose();
-            }
+        btnLogout.addActionListener(arg0 -> {
+            Library.main(new String[]{});
+            frame.dispose();
         });
         btnLogout.setFont(new Font("Tahoma", Font.PLAIN, 15));
         GroupLayout gl_contentPane = new GroupLayout(contentPane);

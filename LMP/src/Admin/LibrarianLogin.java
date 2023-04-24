@@ -13,22 +13,19 @@ import javax.swing.GroupLayout.Alignment;
 
 public class LibrarianLogin extends JFrame {
     static LibrarianLogin frame;
-    private JPanel contentPane;
-    private JTextField textField;
-    private JPasswordField passwordField;
+    private final JTextField textField;
+    private final JPasswordField passwordField;
 
     /**
      * Launch the application.
      */
     public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    frame = new LibrarianLogin();
-                    frame.setVisible(true);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+        EventQueue.invokeLater(() -> {
+            try {
+                frame = new LibrarianLogin();
+                frame.setVisible(true);
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         });
     }
@@ -39,7 +36,7 @@ public class LibrarianLogin extends JFrame {
     public LibrarianLogin() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 450, 300);
-        contentPane = new JPanel();
+        JPanel contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
 
@@ -73,6 +70,13 @@ public class LibrarianLogin extends JFrame {
 
         passwordField = new JPasswordField();
         GroupLayout gl_contentPane = new GroupLayout(contentPane);
+        JButton btnBack = new JButton("Back");
+
+        btnBack.addActionListener(e -> {
+            Library.main(new String[]{});
+            frame.dispose();
+        });
+
         gl_contentPane.setHorizontalGroup(
                 gl_contentPane.createParallelGroup(Alignment.TRAILING)
                         .addGroup(gl_contentPane.createSequentialGroup()
@@ -94,6 +98,10 @@ public class LibrarianLogin extends JFrame {
                                 .addContainerGap(187, Short.MAX_VALUE)
                                 .addComponent(btnLogin, GroupLayout.PREFERRED_SIZE, 86, GroupLayout.PREFERRED_SIZE)
                                 .addGap(151))
+                        .addGroup(gl_contentPane.createSequentialGroup()
+                                .addContainerGap(359, Short.MAX_VALUE)
+                                .addComponent(btnBack)
+                                .addContainerGap())
         );
         gl_contentPane.setVerticalGroup(
                 gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -109,6 +117,7 @@ public class LibrarianLogin extends JFrame {
                                         .addComponent(passwordField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                                 .addGap(18)
                                 .addComponent(btnLogin, GroupLayout.PREFERRED_SIZE, 37, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnBack)
                                 .addContainerGap(80, Short.MAX_VALUE))
         );
         contentPane.setLayout(gl_contentPane);
